@@ -3,10 +3,22 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.Log;
 import android.view.View;
 
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+
+import com.example.myapplication.databinding.ActivityMainBinding;
+
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -16,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     // declare UI components
     private Button showDiaglogButton;
-    private EditText userET;
+    private EditText userEditText;
     private TextView userTextView;
     // declare toast text
     private String toastMessage;
@@ -29,14 +41,14 @@ public class MainActivity extends AppCompatActivity {
 
         // define UI Component
         showDiaglogButton = findViewById(R.id.show_dialog_button);
-        userET = findViewById(R.id.user_edit_text);
+        userEditText = findViewById(R.id.user_edit_text);
         userTextView = findViewById(R.id.user_text_view);
         // add button listener
         showDiaglogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //  build toast message
-                String message = toastMessage + userET.getText();
+                String message = toastMessage + userEditText.getText();
                Toast.makeText(getApplicationContext(), message , Toast.LENGTH_SHORT).show();
                // set user text view with toast message
                 userTextView.setText(message);

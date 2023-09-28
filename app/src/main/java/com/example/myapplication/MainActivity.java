@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
+    // this is beta version
     // declare UI components
     private Button showDiaglogButton;
     private EditText userET;
